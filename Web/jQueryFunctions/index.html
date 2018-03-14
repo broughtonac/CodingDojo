@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JQuery Functions</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".add_class_test h3").click(function() {
+                    $(".add_class_test p").addClass("red")
+                })
+                $("#globe").hide()
+                $(".slideToggle_test h3").click(function() {
+                    $("#globe").slideToggle()
+                })
+                $(".append_test h3").click(function () {
+                    $(".append_test").append("<p>new paragraph</p>")
+                })
+                $(".show_test p:last-child").hide()
+                $(".show_test h3").click(function() {
+                    $(".show_test p:last-child").show()
+                })
+                $(".toggle_test h3").click(function() {
+                    $(".toggle_test p").toggle()
+                })
+                $(".slideDown_test p:last-child").hide()
+                $(".slideDown_test h3").click(function() {
+                    $(".slideDown_test p:last-child").slideDown()
+                })
+                $(".slideUp_test h3").click(function() {
+                    $(".slideUp_test p").slideUp()
+                })
+                $(".fadeIn_test p:last-child").hide()
+                $(".fadeIn_test h3").click(function () {
+                    $(".fadeIn_test p:last-child").fadeIn()
+                })
+                $(".fadeOut_test h3").click(function() {
+                    $(".fadeOut_test p").fadeOut()
+                })
+                $(".before_test h3").click(function() {
+                    $("body div").before("<h1>header</h1>")
+                })
+                $(".after_test h3").click(function() {
+                    $("body div").after("<h1>footer</h1>")
+                })
+                $(".html_test h3").click(function() {
+                    $(".html_test p").html("<img id='globe' src='globe.png' alt='image'>")
+                })
+                $(".attr_test h3").click(function() {
+                    var class_name = $(".attr_test").attr("class")
+                    $(".attr_test p").after(class_name)
+                })
+                $(".val_test h3").click(function(){
+                    console.log($("#v").val())
+                })
+                $(".text_test h3").click(function() {
+                    var s = $("h3").text()
+                    $(".text_test p").after(s)
+                })
+                var x = $("#data")
+                $.data(x, "key", "value")
+                $(".data_test h3").click(function(){
+                    var v = $.data(x, "key")
+                    $("#data").after(v)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="add_class_test">
+            <h3>addClass</h3>
+            <p>click the button to add class 'red' to this paragraph</p>
+        </div>
+        <div class="slideToggle_test">
+            <h3>slideToggle</h3>
+            <p>click the button to slideToggle a hidden image</p>
+            <img id="globe" src="globe.png" alt="image">
+        </div>
+        <div class="append_test">
+            <h3>append</h3>
+            <p>click the button to append a new paragraph</p>
+        </div>
+        <div class="show_test">
+            <h3>show</h3>
+            <p>click the button to show a hidden paragraph</p>
+            <p>hidden paragraph</p>
+        </div>
+        <div class="toggle_test">
+            <h3>toggle</h3>
+            <p>click the button to hide/show this paragraph</p>
+        </div>
+        <div class="slideDown_test">
+            <h3>slideDown</h3>
+            <p>click the button to slide a hidden paragraph down</p>
+            <p>hidden paragraph</p>
+        </div>
+        <div class="slideUp_test">
+            <h3>slideUp</h3>
+            <p>click the button to slide this paragraph up</p>
+        </div>
+        <div class="fadeIn_test">
+            <h3>fadeIn</h3>
+            <p>click the button to fade in a hidden paragraph</p>
+            <p>hidden paragraph</p>
+        </div>
+        <div class="fadeOut_test">
+            <h3>fadeOut</h3>
+            <p>click the button to fade out this paragraph</p>
+        </div>
+        <div class="before_test">
+            <h3>before</h3>
+            <p>click the button to insert a header before each test</p>
+        </div>
+        <div class="after_test">
+            <h3>after</h3>
+            <p>click the button to insert a footer after each test</p>
+        </div>
+        <div class="html_test">
+            <h3>html</h3>
+            <p>click the button to modify the html, replacing this text with an image</p>
+        </div>
+        <div class="attr_test">
+            <h3>attr</h3>
+            <p>click the button to display the class name for this div</p>
+        </div>
+        <div class="val_test">
+            <h3>val</h3>
+            <input id="v" type="text" name="name">
+            <p>click the button to get the value of the input (check console)</p>
+        </div>
+        <div class="text_test">
+            <h3>text</h3>
+            <p>click the button to display the text content of every h3</p>
+        </div>
+        <div class="data_test">
+            <h3>data</h3>
+            <p id="data">click the button to display hidden data within this paragraph</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href='/logout'>log out</a> | <a href='/books'>home</a>
+    <h1>review a book</h1>
+    <form action='/bookreviews/create' method='post'>
+        {% csrf_token %}
+        title: <input type='text' name='title'><br>
+        enter author: <input type='text' name='entered_author'><br>
+        or select author:
+        <select name='selected_author'>
+            <option></option>
+            {% for a in authors %}
+                <option value={{ a }}>{{ a }}</option>
+            {% endfor %}
+        </select><br>
+        rating:
+        <select name='rating'>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+        </select><br>
+        review: <input type='text' name='content'>
+        <input type='submit' value='submit'>
+    </form>
+    <div>
+        {% if messages %}
+            <ul>
+            {% for msg in messages %}
+                <li>{{ msg }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<fieldset>
+  <legend>login</legend>
+  <form method="POST" (submit)="login()" name="login" #loginForm="ngForm">
+    email:
+    <input
+      type="text"
+      name="email"
+      required
+      [(ngModel)]="registeredUser.email"
+      #email="ngModel">
+    <br>
+    password:
+    <input
+      type="password"
+      name="password"
+      required
+      [(ngModel)]="registeredUser.password"
+      #password="ngModel">
+    <br>
+    <input type="submit" value="login">
+  </form>
+</fieldset>
+<p>{{registeredUser | json}}</p>
+<fieldset>
+  <legend>register</legend>
+  <form method="POST" (submit)="register()" name="register" #registerForm="ngForm">
+    first name:
+    <input
+      type="text"
+      name="first"
+      required
+      [(ngModel)]="unregisteredUser.first"
+      #first="ngModel">
+    <br>
+    last name:
+    <input
+      type="text"
+      name="last"
+      required
+      [(ngModel)]="unregisteredUser.last"
+      #last="ngModel">
+    <br>
+    email:
+    <input
+      type="text"
+      name="email"
+      required
+      pattern="^([a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{1,})$"
+      [(ngModel)]="unregisteredUser.email"
+      #email="ngModel">
+    <br>
+    password:
+    <input
+      type="password"
+      name="password"
+      required
+      minlength="8"
+      [(ngModel)]="unregisteredUser.password"
+      #password="ngModel">
+    <br>
+    confirm password:
+    <input
+      type="password"
+      name="confirmation"
+      required
+      minlength="8"
+      pattern={{unregisteredUser.password}}
+      [(ngModel)]="unregisteredUser.confirmation"
+      #confirmation="ngModel">
+    <br>
+    <input *ngIf="registerForm.valid" type="submit" value="register">
+  </form>
+</fieldset>
+<p>{{unregisteredUser | json}}</p>
+<p>{{registerForm.valid | json}}</p>
+<p>{{registerForm.errors | json}}</p>

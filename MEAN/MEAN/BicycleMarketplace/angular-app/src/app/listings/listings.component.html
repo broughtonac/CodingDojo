@@ -1,0 +1,83 @@
+<h1>bicycle marketplace</h1>
+<h3 style="display:inline-block" [routerLink]="['/browse']">browse</h3>
+<h3 style="display:inline-block">|</h3>
+<h3 style="display:inline-block">my listings</h3>
+<h3 style="display:inline-block">|</h3>
+<h3 style="display:inline-block" [routerLink]="['']">log off</h3>
+
+<fieldset>
+<legend>create listing</legend>
+    <form method="POST" (submit)="create()">
+        title:
+        <input
+        type="text"
+        name="title"
+        [(ngModel)]="newBicycle.title"
+        >
+        <br>
+        description:
+        <input
+        type="text"
+        name="description"
+        [(ngModel)]="newBicycle.description"
+        >
+        <br>
+        price:
+        <input
+        type="text"
+        name="price"
+        [(ngModel)]="newBicycle.price"
+        >
+        <br>
+        location:
+        <input
+        type="text"
+        name="location"
+        [(ngModel)]="newBicycle.location"
+        >
+        <br>
+        <input type="submit" value="create">
+    </form>
+</fieldset>
+
+<fieldset>
+<legend>modify listing</legend>
+    <fieldset *ngFor="let userBicycle of userBicycles">
+        <form method="PUT" (submit)="update(userBicycle._id)">
+            title:
+            <input
+            type="text"
+            name="title"
+            [(ngModel)]="oldBicycle.title"
+            [placeholder]="userBicycle.title"
+            >
+            <br>
+            description:
+            <input
+            type="text"
+            name="description"
+            [(ngModel)]="oldBicycle.description"
+            [placeholder]="userBicycle.description"
+            >
+            <br>
+            price:
+            <input
+            type="text"
+            name="price"
+            [(ngModel)]="oldBicycle.price"
+            [placeholder]="userBicycle.price"
+            >
+            <br>
+            location:
+            <input
+            type="text"
+            name="location"
+            [(ngModel)]="oldBicycle.location"
+            [placeholder]="userBicycle.location"
+            >
+            <br>
+            <input type="submit" value="edit">
+        </form>
+        <button (click)="destroy(userBicycle._id)">delete</button>
+    </fieldset>
+</fieldset>

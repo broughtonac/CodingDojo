@@ -1,0 +1,9 @@
+form {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+fieldset {
+    margin: 20px;
+    padding: 10px;
+}

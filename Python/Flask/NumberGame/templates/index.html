@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>welcome</title>
+    </head>
+    <body>
+        
+        {% if session['guess'] == None %}
+            <h1>welcome to the number game</h1>
+            <h3>guess a number between 1 and 100</h3>
+        {% endif %}
+
+        {% if session['guess'] != None %}
+            {% if session['guess'] > session['ans'] %}
+                <h1>too high, guess again</h1>
+            {% endif %}
+
+            {% if session['guess'] < session['ans'] %}
+                <h1>too low, guess again</h1>
+            {% endif %}
+
+            {% if session['guess'] == session['ans'] %}
+                <h1>{{session['guess']}} is right, you win</h1>
+                <form action='/again' method='post'>
+                    <input type='submit' value='play again'>
+                </form>
+            {% endif %}
+        {% endif %}
+
+        {% if session['guess'] != session['ans'] %}
+            <form action='/process' method='post'>
+                <input type='text' name='number'><br>
+                <input type='submit' value='guess'><br>
+            </form>
+            <form action='/reset' method='post'>
+                <input type='submit' value='reset'>
+            </form>
+        {% endif %}
+    </body>
+</html>

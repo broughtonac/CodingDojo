@@ -1,0 +1,214 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper {
+    width: 1000px;
+    padding-left: 25px;
+}
+.header p[id="net"] {
+    color: blue;
+}
+.header p[id="www"] {
+    background-color: blue;
+    color: white;
+    font-size: 36px;
+    padding-top:20px;
+    padding-bottom: 20px;
+    text-indent: 25px;
+}
+.header img {
+    width: 100px;
+    height: auto;
+}
+.header_upper {
+    display: flex;
+    align-items: center;
+    font-size: 48px;
+}
+.content {
+    display: flex;
+}
+.left {
+    width: 800px;
+    padding: 25px;
+}
+.left_upper {
+    border-bottom: 1px solid gray;
+}
+.left_upper p:nth-of-type(1),
+.left_upper p:nth-of-type(2) {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+}
+.left_upper p:nth-of-type(2) {
+    color: red;
+}
+.left_upper p:nth-of-type(3) {
+    font-size: 24px;
+}
+.left_upper a {
+    display: block;
+    text-align: center;
+    height: 50px;
+    padding-top: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px gray;
+}
+.left_upper a:first-of-type {
+    background-color: blue;
+}
+.left_upper a:last-of-type {
+    background-color: orange;
+    margin-bottom: 50px;
+}
+.empty {
+    height: 40px;
+}
+.left_lower {
+    background-image: url("ad_background.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 35px 0px 35px 0px;
+}
+.left_lower img {
+    width: 100px;
+    height: auto;
+}
+.left_lower p {
+    color: white;
+    font-size: 36px;
+}
+.left_lower a {
+    background-color: cyan;
+    height: 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    padding-top: 10px;
+    position: relative;
+    top: 10px;
+}
+.left_lower a p {
+    display: inline;
+    font-size: 18px;
+    margin: 0px 5px 0px 5px;
+    position: relative;
+    top: 5px;
+}
+.left_lower a p:last-of-type {
+    background: linear-gradient(to right,
+        rgba(255,255,255, 0.5) 20%, 
+        rgba(255,255,255, 1) 80%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+/*
+*
+* 
+    MAIN CONTENT
+*
+*
+*/
+.main_header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+.main_header_left a {
+    text-decoration: none;
+}
+.main_header_left img {
+    width: 50px;
+    height: auto;
+    outline: none;
+    vertical-align: middle;
+}
+.main_header_right {
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+}
+.main_header_right img {
+    width: 75px;
+    height: auto;
+    outline: none;
+    padding-right: 15px;    
+}
+.main_header_right p:first-of-type,
+.main_header_right p:last-of-type {
+    color: gray;
+}
+.main_header_right p:nth-of-type(2) {
+    color: cyan;
+    font-size: 36px;
+}
+h2 {
+    color: blue;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+ul, ol {
+    list-style-position: inside;
+}
+.main_upper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main_upper p {
+    line-height: 40px;
+}
+.main_upper ul li {
+    text-indent:-20px;
+    margin-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+.main_middle ol li {
+    text-indent: -15px;
+    margin-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+img[src="client_server.jpg"] {
+    margin: auto;
+    width: 400px;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.main_middle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main_lower {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+img[src="html.png"] {
+    width: 180px;
+    height: 180px;
+    margin-right: 20px;
+}
+.main_lower {
+    display: flex;
+    border-top: 5px solid blue;
+    border-right: 5px solid blue;
+    border-left: 5px solid blue;
+    padding-right: 10px;
+}
+.main_lower_text p:last-of-type, .main_lower_text a {
+    display: inline-block;
+}

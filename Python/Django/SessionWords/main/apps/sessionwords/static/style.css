@@ -1,0 +1,15 @@
+* {
+    outline: 1px solid green;
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.blue {
+    color: blue;
+}
+.bigfont {
+    font-size: 48px;
+}

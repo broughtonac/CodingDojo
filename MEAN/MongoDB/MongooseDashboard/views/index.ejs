@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>display all mongooses</h1>
+    <a href="/mongooses/new">add new mongoose</a>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>weight</th>
+            <th>actions</th>
+        </tr>
+        <% for (let i = 0; i < mongooses.length; i++) { %>
+            <tr>
+                <td><%= mongooses[i].name %></td>
+                <td><%= mongooses[i].age %></td>
+                <td><%= mongooses[i].weight %></td>
+                <td>
+                    <a href=<%= "/mongooses/" + mongooses[i].id %>>view</a>
+                    <a href=<%= "/mongooses/edit/" + mongooses[i].id%>>edit</a>
+                    <form id=<%= mongooses[i].id %> action=<%= "/mongooses/destroy/" + mongooses[i].id %> method="post">
+                        <input type="submit" value="delete">
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

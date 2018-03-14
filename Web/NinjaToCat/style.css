@@ -1,0 +1,13 @@
+.wrapper {
+    outline: 1px solid green;
+    width: 500px;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
+    justify-items: center;
+    grid-row-gap: 10px;
+}
+.wrapper img {
+    outline: 1px solid red;
+}

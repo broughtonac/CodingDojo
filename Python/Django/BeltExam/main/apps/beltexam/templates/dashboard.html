@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href='/logout'>log out</a>
+    <h1>welcome {{ user.alias }}</h1>
+    <fieldset>
+        <legend><h2>quotes</h2></legend>
+        {% for q in quotes %}
+            <fieldset>
+                <h3>{{ q.author }}:</h3>
+                <p>"{{ q.content }}"</p>
+                posted by: <a href='/users/{{ q.poster.id }}'>{{ q.poster.alias }}</a><br>
+                <a href='/quotes/favorite/{{ user.id }}/{{ q.id}}'>add to favorites</a>
+            </fieldset>
+        {% endfor %}
+    </fieldset>
+    <fieldset>
+        <legend><h2>favorites</h2></legend>
+        {% for q in favorites %}
+            <fieldset>
+                <h3>{{ q.author }}:</h3>
+                <p>"{{ q.content }}"</p>
+                posted by: <a href='/users/{{ q.poster.id }}'>{{ q.poster.alias }}</a><br>
+                <a href='/quotes/unfavorite/{{ user.id }}/{{ q.id}}'>remove from favorites</a>
+            </fieldset>
+        {% endfor %}
+    </fieldset>
+    <fieldset>
+        <legend><h2>add quote</h2></legend>
+        <form action='quotes/add/{{ user.id }}' method='post'>
+            {% csrf_token %}
+            author: <input type='text' name='author'><br>
+            quote: <input type='text' name='content'><br>
+            <input type='submit' value='post'>
+        </form>
+        <div>
+            {% if messages %}
+                <ul>
+                {% for m in messages %}
+                    <li>{{ m }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </fieldset>
+</body>
+</html>

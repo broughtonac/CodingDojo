@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.andrewbroughton.grouplanguages.controllers.GroupLanguagesController.java&apos; to &apos;Languages.java&apos;&#x0A;- Original project: &apos;grouplanguages&apos;&#x0A;- Original element: &apos;com.andrewbroughton.grouplanguages.controllers.GroupLanguagesController.java&apos;&#x0A;- Renamed element: &apos;com.andrewbroughton.grouplanguages.controllers.Languages.java&apos;" description="Rename compilation unit &apos;GroupLanguagesController.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java&lt;com.andrewbroughton.grouplanguages.controllers{GroupLanguagesController.java" name="Languages.java" references="false" stamp="1516218380362" version="1.0"/>
+</session>

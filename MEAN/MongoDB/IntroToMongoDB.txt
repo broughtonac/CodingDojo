@@ -1,0 +1,51 @@
+--sudo mongod // in one terminal tab
+--mongo // start mongodb shell in another terminal tab
+--use my_first_db
+
+--db.createCollection("students")
+
+--db.students.insert({name:"s1",home_state:"CA",lucky_number:1,birthday:{month:1,day:1,year:1990}})
+--db.students.insert({name:"s2",home_state:"CA",lucky_number:2,birthday:{month:2,day:2,year:1991}})
+--db.students.insert({name:"s3",home_state:"VA",lucky_number:3,birthday:{month:3,day:3,year:1992}})
+--db.students.insert({name:"s4",home_state:"NY",lucky_number:4,birthday:{month:4,day:4,year:1993}})
+--db.students.insert({name:"s5",home_state:"FL",lucky_number:5,birthday:{month:5,day:5,year:1994}})
+
+--db.students.find().pretty() // get all students
+
+--db.students.find({$or:[{home_state:"CA"},{home_state:"FL"}]}).pretty()
+
+--db.students.find(
+    {$or:[
+      {lucky_number:{$gt:3}},
+      {lucky_number:{$lte:10}},
+      {$and:[
+        {lucky_number:{$gte:1}},
+        {lucky_number:{$lte:9}}
+      ]}
+    ]}
+  ).pretty()
+
+--db.students.update({},{$set:{"interests":["coding","brunch","mongo--db"]}},false,true) // the `false,true` sets options so that we update all documents matching query
+
+--db.students.update({name:"s2"},{$set:{"interests":["i1","i2","i3"]}})
+--db.students.update({name:"s3"},{$set:{"interests":["i4","i5","i6"]}})
+--db.students.update({name:"s4"},{$set:{"interests":["i1","i4","i5"]}})
+--db.students.update({name:"s5"},{$set:{"interests":["i1","i3","i4"]}})
+
+--db.students.update({name:"s2"},{$push:{interests:"taxes"}})
+
+--db.students.update({name:"s2"},{$pop:{interests:1}})
+
+--db.students.remove({name:"s5"})
+
+--db.students.remove({lucky_number:{$gt:1}},true)
+
+--db.students.update({},{$set:{"number_of_belts":0}},false,true)
+
+--db.students.update({home_state:"VA"},{$inc:{number_of_belts:1}}) // increment `number_of_belts` by 1
+
+--db.students.update({},{$rename:{"number_of_belts":"belts_earned"}},false,true)
+
+--db.students.update({},{$unset:{lucky_number:""}},false,true)
+
+--db.students.update({},{$set:{"updated_on":new Date()}},false,true)

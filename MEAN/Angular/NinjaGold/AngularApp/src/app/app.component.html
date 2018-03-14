@@ -1,0 +1,31 @@
+<div>
+  <h1>total gold: {{ gold }}</h1>
+</div>
+<fieldset>
+  <legend><h3>farm</h3></legend>
+  <p>earn 2-5 gold</p>
+  <button (click)="farm()">GO</button>
+</fieldset>
+<fieldset>
+  <legend><h3>cave</h3></legend>
+  <p>earn 5-10 gold</p>
+  <button (click)="cave()">GO</button>
+</fieldset>
+<fieldset>
+  <legend><h3>house</h3></legend>
+  <p>earn 7-15 gold</p>
+  <button (click)="house()">GO</button>
+</fieldset>
+<fieldset>
+  <legend><h3>casino</h3></legend>
+  <p>earn or lose up to 100 gold</p>
+  <button (click)="casino()">GO</button>
+</fieldset>
+<fieldset>
+  <legend><h3>adventure log</h3></legend>
+  <div style="height:200px;overflow:auto">
+    <ul>
+      <li *ngFor="let message of log">{{ message }}</li>
+    </ul>
+  </div>
+</fieldset>

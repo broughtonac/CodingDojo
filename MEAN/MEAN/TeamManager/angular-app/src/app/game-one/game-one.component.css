@@ -1,0 +1,13 @@
+span {
+    outline: 1px solid black;
+    margin: 5px;
+}
+.green {
+    background-color: green;
+}
+.red {
+    background-color: red;
+}
+.yellow {
+    background-color: yellow;
+}

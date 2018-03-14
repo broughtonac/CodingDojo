@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>success</title>
+    </head>
+    <body>
+        <h1>you are logged in</h1>
+        <form action='/logout' method='post'>
+            <input type='submit' value='log out'>
+        </form>
+        <h3>users currently online:</h3>
+        {% for id in session %}
+            {% if id|int > 0 and id != 'pos' %}
+                <p>USER ID: {{ id }} --- SESSION[ID]: {{ session[id] }}</p>
+            {% endif %}
+        {% endfor %}
+        <h3>session data:</h3>
+        {{ session }}
+    </body>
+</html>

@@ -1,0 +1,7 @@
+<h1>mine</h1>
+<h3>current ShintoCoin value: ${{ value }}</h3>
+<form (submit)="mine()" method="post">
+  <input type="number" name="attempt" [(ngModel)]="attempt">
+  <input type="submit" value="mine">
+</form>
+<p>(hint: 1)</p>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>users show</title>
+</head>
+<body>
+    <h1>user {{ uid }}</h1>
+    <p>full name: {{ name }}</p>
+    <p>email: {{ email }}</p>
+    <p>created at: {{ created }}</p>
+    <a href='/users/{{ uid }}/edit'>edit</a>
+    <a href='/users/{{ uid }}/destroy'>delete</a>
+</body>
+</html>

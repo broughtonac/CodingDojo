@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function zero_negativity(xs) {
+            for (let i = 0; i < xs.length; i++) {
+                if (xs[i] < 0) {
+                    return true
+                }
+            }
+            return false
+        }
+
+        function is_even(x) {
+            return x % 2 == 0
+        }
+
+        function how_many_even(xs) {
+            count = 0
+            for (let i = 0; i < xs.length; i++) {
+                if (is_even(xs[i])) {
+                    count += 1
+                }
+            }
+            return count
+        }
+
+        function create_dummy_array(n) {
+            xs = []
+            for (let i = 0; i < n; i++) {
+                r = Math.floor(Math.random() * 10)
+                xs.push(r)
+            }
+            return xs
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

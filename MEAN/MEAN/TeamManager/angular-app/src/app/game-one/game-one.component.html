@@ -1,0 +1,23 @@
+<fieldset>
+  <legend>
+      <h1 style="display:inline-block">game 1</h1>
+      <h1 style="display:inline-block"> | </h1>
+      <h1 style="display:inline-block" [routerLink]="['/status/game/2']">game 2</h1>
+      <h1 style="display:inline-block"> | </h1>
+      <h1 style="display:inline-block" [routerLink]="['/status/game/3']">game 3</h1>
+  </legend>
+  <table border="1">
+    <tr>
+      <th>name</th>
+      <th>actions</th>
+    </tr>
+    <tr *ngFor="let p of players">
+      <td>{{ p.name }}</td>
+      <td>
+        <span [ngClass]="{'green': p.gameOne == 'playing'}" (click)="togglePlaying(p._id)">playing</span>
+        <span [ngClass]="{'red': p.gameOne == 'notPlaying'}" (click)="toggleNotPlaying(p._id)">not playing</span>
+        <span [ngClass]="{'yellow': p.gameOne == 'undecided'}" (click)="toggleUndecided(p._id)">undecided</span>
+      </td>
+    </tr>
+  </table>
+</fieldset>

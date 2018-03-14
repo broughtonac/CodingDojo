@@ -1,0 +1,58 @@
+mkdir RandomWord
+cd randomword
+django-admin startproject main
+cd main
+mkdir apps
+cd apps
+touch __init__.py
+python ../manage.py startapp randomword
+cd randomword
+...RandomWord/main/apps/randomword/views.py:
+	from django.shortcuts import render, HttpResponse, redirect
+	def index(request):
+		response = "Hello, World!"
+		return HttpResponse(response)
+touch urls.py
+...RandomWord/main/apps/randomworld/urls.py:
+	from django.conf.urls import url
+	from . import views
+	urlpatterns = [
+		url(r'^$', views.index)
+	]
+mkdir templates
+cd templates
+touch index.html
+
+...RandomWord/main/main/settings.py:
+	INSTALLED_APPS = [
+		'apps.randomword',
+		.
+		.
+		.,
+	]
+...RandomWord/main/main/urls.py:
+	from django.conf.urls import url, include
+	from django.contrib import admin
+	urlpatterns = [
+		url(r'^admin/', admin.site.urls),
+		url(r'^', include('apps.randomword.urls'))
+	]
+
+to run program:
+...RandomWord/main$ python manage.py runserver
+
+to activate session and load models:
+	...RandomWord/main$ python manage.py makemigrations
+	...RandomWord/main$ python manage.py migrate
+
+to work in shell:
+	...RandomWord/main$ python manage.py shell
+	>>> from apps.randomword.models import *
+	>>>
+
+to erase database data:
+	{{table name}}.objects.all().delete()
+
+to reset database:
+	delete .../randomword/main/db.sqlite3 file
+	delete all files in .../randomword/main/apps/migrations folder EXCEPT __init__.py

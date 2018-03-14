@@ -1,0 +1,64 @@
+mkdir MyProject
+cd myproject
+npm init -y
+
+nano package.json // add dependencies
+{
+  ...,
+  ...,
+  ...
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "socket.io": "^1.3.6"
+  }
+}
+ctrl + x
+enter
+
+npm install
+npm install express-session --save // only if session will be needed
+npm install mongoose --save // for database
+
+touch server.js
+open server.js
+	var express = require("express")
+	var bodyParser = require("body-parser")
+	var session = require("express-session") // only if we need it
+	var app = express()
+	app.use(bodyParser.urlencoded({extended: true}))
+	app.use(session({secret: "secret"})) // for encryption
+	app.use(express.static(__dirname + "/static"))
+	app.set("views", __dirname + "/views")
+	app.set("view engine", "ejs")
+	// code
+	app.listen(8000)
+
+mkdir static
+mkdir views
+
+// in another terminal window
+sudo mongod
+
+// in yet another terminal window
+mongo
+use my_db
+
+// in original terminal window
+nodemon server.js // start server
+/////////////////////////////////
+  "dependencies": {
+    "bcrypt-as-promised": "^1.1.0",
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.0.5",
+    "mongoose-validator": "^2.0.1"
+  }
+}

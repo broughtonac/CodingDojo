@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register/login</title>
+</head>
+<body>
+    <fieldset>
+        <legend>REGISTER</legend>
+        <form action='/register' method='post'>
+            {% csrf_token %}
+            <p>first name: <input type='text' name='first_name'></p>
+            <p>last name: <input type='text' name='last_name'></p>
+            <p>alias: <input type='text' name='alias'></p>
+            <p>date of birth: <input type='date' name='dob'></p>
+            <p>email address: <input type='text' name='email'></p>
+            <p>password: <input type='password' name='pw'></p>
+            <p>confirm password: <input type='password' name='pw_confirm'></p>
+            <p><input type='submit' value='register'></p>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>LOGIN</legend>
+        <form action='/login' method='post'>
+            {% csrf_token %}
+            <p>email: <input type='text' name='email'></p>
+            <p>password: <input type='password' name='pw'></p>
+            <p><input type='submit' value='login'></p>
+        </form>
+    </fieldset>
+    <div>
+        {% if messages %}
+            <ul>
+            {% for msg in messages %}
+                <li>{{ msg }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

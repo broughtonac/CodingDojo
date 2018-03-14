@@ -1,0 +1,17 @@
+/* * {
+    outline: 1px solid red;
+} */
+fieldset {
+    width: 350px;
+}
+
+.lower {
+    display: flex;
+}
+.list {
+    height: 200px;
+    overflow:auto;
+}
+.edit {
+    height: 175px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>students</h1>
+    <ul id='main'>
+        <!-- empty -->
+    </ul>
+    <script>
+        function appendList(xs, id) {
+            let element = document.getElementById(id)
+            for (let i = 0; i < xs.length; i++) {
+                let y = document.createElement("li")
+                y.innerHTML = xs[i]
+                element.appendChild(y)
+            }
+        }
+        let students = ["Jeff","Jenny","Javier","Joslyn","Joe","Jane","Django"];
+        let target_id = "main";
+        appendList(students, target_id);
+    </script>
+</body>
+</html>

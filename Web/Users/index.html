@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Contact Card</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("form").submit(function() {
+                    var first_name = $("form p:nth-child(1) input").val()
+                    var last_name = $("form p:nth-child(2) input").val()
+                    var email = $("form p:nth-child(3) input").val()
+                    var phone = $("form p:nth-child(4) input").val()
+                    $("form p:nth-child(1) input").val("")
+                    $("form p:nth-child(2) input").val("")
+                    $("form p:nth-child(3) input").val("")
+                    $("form p:nth-child(4) input").val("")
+                    $("fieldset:nth-child(2)").append(
+                        `<div class="row">
+                            <p>${first_name}</p>
+                            <p>${last_name}</p>
+                            <p>${email}</p>
+                            <p>${phone}</p>
+                        </div>`
+                    )
+                    return false
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <h1>add user</h1>
+            <form>
+                <p>first name: <input type="text" name="first" placeholder="first name"></p>
+                <p>last name: <input type="text" name="last" placeholder="last name"></p>
+                <p>email address: <input type="text" name="email" placeholder="email address"></p>
+                <p>phone number: <input type="text" name="phone" placeholder="phone number"></p>
+                <input type="submit" value="add user">
+            </form>
+        </fieldset>
+        <fieldset class="contacts">
+            <div>
+                <h2>first name</h2>
+                <h2>last name</h2>
+                <h2>email</h2>
+                <h2>phone</h2>
+            </div>
+        </fieldset>
+    </body>
+</html>

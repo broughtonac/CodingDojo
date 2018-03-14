@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit users</title>
+</head>
+<body>
+    <h1>edit user {{ uid }}</h1>
+    {% if messages %}
+        {% for m in messages %}
+            <li>{{ m }}</li>
+        {% endfor %}
+    {% endif %}
+    <form action='/users/{{ uid }}/update' method='post'>
+        {% csrf_token %}
+        <p>first name:</p>
+        <input type='text' name='first_name' placeholder='{{ first_name }}'>
+        <p>last name:</p>
+        <input type='text' name='last_name' placeholder='{{ last_name }}'>
+        <p>email address:</p>
+        <input type='text' name='email' placeholder='{{ email }}'>
+        <p><input type='submit' value='submit edits'></p>
+    </form>
+    <a href='javascript: history.go(-1)'>go back</a>
+</body>
+</html>

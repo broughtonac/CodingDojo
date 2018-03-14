@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">        
+        <title>wall login/register</title>
+    </head>
+    <body>
+        <div>
+            {% with ms = get_flashed_messages() %}
+                {% if ms %}
+                    {% for m in ms %}
+                        <p>{{ m }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <fieldset>
+            <form action='/check' method='post'>
+                <input type='hidden' name='action' value='login'>            
+                <h3>login</h3>
+                email: <input type='text' name='email'><br>
+                password: <input type='password' name='pw'><br>
+                <input type='submit' value='login'>
+            </form>
+        </fieldset>
+        <fieldset>
+            <form action='/check' method='post'>
+                <input type='hidden' name='action' value='register'>            
+                <h3>sign up</h3>
+                first name: <input type='text' name='first'><br>
+                last name: <input type='text' name='last'><br>
+                email: <input type='text' name='email'><br>
+                password: <input type='password' name='pw'><br>
+                confirm password: <input type='password' name='confirm'><br>
+                <input type='submit' value ='register'>
+            </form>
+        </fieldset>
+    </body>
+</html>

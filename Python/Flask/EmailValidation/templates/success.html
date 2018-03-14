@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>validated</title>
+    </head>
+    <body>
+        <h1>thank you</h1>
+        {{ get_flashed_messages()[-1] }}
+        <h2>emails entered</h2>
+        {% for email in all_emails %}
+            <p>email address: {{ email['address'] }}</p>
+            <p>entered at: {{ email['entered_at'] }}</p><br><br>
+        {% endfor %}
+        <h3>mysql data</h3>
+        {{ all_emails }}
+    </body>
+</html>

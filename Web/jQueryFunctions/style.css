@@ -1,0 +1,17 @@
+.red {
+    color: red;
+}
+#globe {
+    width: 100px;
+    height: auto;
+}
+h3 {
+    background-color: gray;
+    width: 200px;
+    text-align: center;
+    border: 1px solid black;
+}
+div {
+    padding: 25px 0px 25px 0px;
+    border-bottom: 1px solid black;
+}

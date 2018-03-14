@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>friends</title>
+    </head>
+    <body>
+        <form action='/process' method='post'>
+            name: <input type='text' name='name'><br><br>
+            age: <input type='text' name='age'><br><br>
+            <input type="submit" value="enter data">
+        </form>
+        <h1>all my friends</h1>
+        {% for friend in all_friends %}
+            <p>name: {{ friend['name'] }} age: {{ friend['age'] }} since: {{ friend['since'] }}</p>
+        {% endfor %}
+        <h3>mysql data</h3>
+        {{ all_friends }}
+    </body>
+</html>

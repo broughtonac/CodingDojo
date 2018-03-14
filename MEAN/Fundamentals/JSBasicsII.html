@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function magic_multiply(x, y) {
+            if (x == 0 && y == 0) {
+                return "all inputs zero"
+            }
+            if (typeof x === 'number' && typeof y === 'number') {
+                return x * y
+            }
+            if (typeof x === 'object') {
+                for (let i = 0; i < x.length; i++) {
+                    x[i] *= y
+                }
+                return x
+            }
+            if (typeof y === 'string') {
+                return "error: cannot multiply by string"
+            }
+            if (typeof x === 'string') {
+                string = ""
+                for (let i = 0; i < y; i ++) {
+                    string += x
+                }
+                return string
+            }
+        }
+        console.log(magic_multiply(0,0))
+        console.log(magic_multiply(5,2))
+        console.log(magic_multiply([1,2,3],2))
+        console.log(magic_multiply(7,"three"))
+        console.log(magic_multiply("brendo",4))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

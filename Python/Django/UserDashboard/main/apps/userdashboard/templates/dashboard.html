@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dashboard</title>
+</head>
+<body>
+    {% if user.is_admin %}
+        <p><a href='/users/new'>add new user</a></p>
+    {% endif %}
+        <p><a href='/users/show/{{ user.id }}'>profile</a></p>
+    {% if users %}
+        <table border=1px>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>created at</th>
+                <th>user level</th>
+                {% if user.is_admin %}
+                    <th>actions</th>
+                {% endif %}
+            </tr>
+            {% for u in users %}
+                <tr>
+                    <td>{{ u.id }}</td>
+                    <td><a href='/users/show/{{ u.id }}'>{{ u.first_name }} {{ u.last_name }}</a></td>
+                    <td>{{ u.email }}</td>
+                    <td>{{ u.created_at }}</td>
+                    {% if u.is_admin %}
+                        <td>admin</td>
+                    {% endif %}
+                    {% if not u.is_admin %}
+                        <td>regular</td>
+                    {% endif %}
+                    {% if user.is_admin %}
+                        <td>
+                            <a href='/users/edit/{{ u.id }}'>edit</a>
+                            <a href='/remove_user/{{ u.id }}'>remove</a>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    <a href='/logout'>log out</a>
+</body>
+</html>

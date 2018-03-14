@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let xs = []
+        xs.push('coding', 'dojo', 'rocks')
+        xs.pop()
+        console.log(xs[xs.length - 1])
+
+        const ys = []
+        console.log(ys)
+        ys.push(88)
+        // code executes without error, `ys` does not change
+
+        let zs = [9,10,6,5,-1,20,13,2]
+        for (let i = 0; i < zs.length - 1; i++) {
+            console.log(zs[i])
+        }
+
+        let names = ['Kadie', 'Joe', 'Fritz', 'Pierre', 'Alphonso']
+        for (let i = 0; i < names.length; i++) {
+            console.log(names[i].length)
+        }
+
+        for (let i = 0; i < names.length; i++) {
+            if (names[i].length == 5) {
+                console.log(names[i])
+            }
+        }
+
+        function yell(myString) {
+            return myString.toUpperCase()
+        }
+        console.log(yell("abc"))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

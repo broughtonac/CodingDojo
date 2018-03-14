@@ -1,0 +1,39 @@
+mkdir BooksAPI
+cd BooksAPI
+
+create express project:
+	npm init -y
+	npm install bcrypt body-parser ejs express express-session mongoose --save // pick and choose
+	touch server.js
+	configure server.js:
+		let bodyParser = require("body-parser")
+		let express = require("express")
+		let mongoose = require("mongoose")
+		let app = express()
+		app.use(bodyParser.json())
+		app.use(express.static( __dirname + '/AngularApp/dist'))
+		app.listen(8000)
+	    
+	    // connect to db
+	    mongoose.connect("mongodb://localhost/booksapi")
+		mongoose.Promise = global.Promise
+
+create angular app within BooksAPI:
+	ng new AngularApp
+
+configure angular files:
+	cd AngularApp
+	ng g s http // creates service named `http` (file named `http.service.ts`)
+	follow the platform page: Angular -> Fetch Data -> Service
+
+setup db:
+	in new terminal tab:
+		sudo mongod
+	in new terminal tab:
+		mongo
+		use booksapi
+
+start servers:
+	ng build --watch // creates `dist` folder, launches node server to watch .ts files
+	in new terminal tab:
+		/BooksAPI$ nodemon server.js

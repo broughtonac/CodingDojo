@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper {
+    width: 1000px;
+    margin: auto;
+}
+.header {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #f5faf3;
+    border-radius: 5px;
+    border: 1px solid #e6e8e7;
+}
+.header ul {
+    display: flex;
+    list-style: none;
+    color: #474942;
+}
+.header ul li {
+    border: 0.1px solid #ececec;
+    padding: 20px 30px 20px 30px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;    
+}
+.form_box {
+    display: flex;
+    margin-left: 75px;
+}
+.glyph {
+    position: relative;
+    top: 14px;
+    background-color: white;
+    width: 25px;
+    height: 33px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 3px;
+}
+input {
+    position: relative;
+    top: 3px;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+button {
+    position: relative;
+    top: 20px;
+    right: 10px;
+    background-color: #f5faf3;
+    border: none;
+    outline: none;
+}
+button img {
+    width: 35px;
+    position: relative;
+    top: -6px;
+    left: -2px;
+}
+.main_image img {
+    width: 1000px;
+}
+.main_image_menu {
+    position: relative;
+    top: -4px;
+}
+.main_image_menu ul {
+    display: flex;
+    list-style: none;
+    background-color: #444444;
+    color: #4e7f99;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-indent: 20px;
+    height: 40px;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;    
+}
+.main_image_menu ul li:first-child {
+    color: white;
+}
+.main_image_menu li[class="slash"] {
+    color: #59585c;
+    font-size: 24px;
+}
+.sub_header {
+    display: flex;
+    background-color: #ffffff;
+    outline: 1px solid #e3e5e4;
+    height: 50px;
+    align-items: center;
+    padding: 10px;
+    font-family: 'Barlow Condensed', sans-serif;    
+}
+.sub_header h1 {
+    color: #b0b0b0;
+    text-indent: 30px;
+}
+.sub_header_button {
+    margin-left: 225px;
+    display: flex;
+    background-color: #487ca1;
+    border-radius: 5px;
+    color: white;
+    height: 25px;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+}
+.sub_header_button p {
+    margin-left: 25px;
+}
+.sub_header_button a {
+    color: white;
+    text-decoration: none;
+}
+.big_column_wrapper {
+    display: flex;
+    outline: 1px solid #e3e5e4;
+    background-color: #fdfdfd;
+    justify-content: space-evenly;
+}
+.big_column_wrapper .big_column:nth-child(2),
+.big_column_wrapper .big_column:nth-child(3),
+.big_column_wrapper .big_column:nth-child(4) {
+    border-left: 1px solid #e3e5e4;
+}
+.big_column {
+    text-align: center;
+    padding: 20px 0px 20px 10px;
+    width: 225px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.big_column_header {
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.big_column_header h3 {
+    margin-left: 15px;
+}
+.big_column p {
+    line-height: 25px;
+}
+.big_column img, .big_column a {
+    display: block;
+}
+.big_column img[class="main_column_image"] {
+    margin: auto;
+}
+.big_column a {
+    background-color: #5ba5dc;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-family: 'Josefin Sans', sans-serif;    
+}
+.empty_row {
+    background-color: #fdfdfd;
+    outline: 1px solid #e3e5e4;    
+    height: 75px;
+}
+.small_column_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 50px 0px 50px;
+}
+.small_column p {
+    font-size: 24px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #e3e5e4;
+}
+.small_column a {
+    display: block;
+    color: #a5a4a1;
+    text-decoration: none;
+    margin: 5px 0px 5px 0px;
+}
+.footer {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 0px 5px 0px 5px;
+    margin-left: 50px;
+}

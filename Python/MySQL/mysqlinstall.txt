@@ -1,0 +1,299 @@
+Last login: Thu Nov 30 10:25:29 on ttys000
+~$ brew
+-bash: brew: command not found
+~$ ls
+Applications	Downloads	Movies		Public
+Desktop		IdeaProjects	Music		target
+Documents	Library		Pictures
+~$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+==> This script will install:
+/usr/local/bin/brew
+/usr/local/share/doc/homebrew
+/usr/local/share/man/man1/brew.1
+/usr/local/share/zsh/site-functions/_brew
+/usr/local/etc/bash_completion.d/brew
+/usr/local/Homebrew
+==> The following new directories will be created:
+/usr/local/Homebrew
+/usr/local/Frameworks
+/usr/local/sbin
+/usr/local/var
+
+Press RETURN to continue or any other key to abort
+==> /usr/bin/sudo /bin/mkdir -p /usr/local/Homebrew /usr/local/Frameworks /usr/local/sbin /usr/local/var
+Password:
+==> /usr/bin/sudo /bin/chmod g+rwx /usr/local/Homebrew /usr/local/Frameworks /usr/local/sbin /usr/local/var
+==> /usr/bin/sudo /bin/chmod 755 /usr/local/share/zsh /usr/local/share/zsh/site-functions
+==> /usr/bin/sudo /usr/sbin/chown Andrew /usr/local/Homebrew /usr/local/Frameworks /usr/local/sbin /usr/local/var
+==> /usr/bin/sudo /usr/bin/chgrp admin /usr/local/Homebrew /usr/local/Frameworks /usr/local/sbin /usr/local/var
+==> /usr/bin/sudo /bin/mkdir -p /Users/Andrew/Library/Caches/Homebrew
+==> /usr/bin/sudo /bin/chmod g+rwx /Users/Andrew/Library/Caches/Homebrew
+==> /usr/bin/sudo /usr/sbin/chown Andrew /Users/Andrew/Library/Caches/Homebrew
+==> /usr/bin/sudo /bin/mkdir -p /Library/Caches/Homebrew
+==> /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+==> /usr/bin/sudo /usr/sbin/chown Andrew /Library/Caches/Homebrew
+==> Downloading and installing Homebrew...
+remote: Counting objects: 95022, done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 95022 (delta 3), reused 4 (delta 1), pack-reused 95008
+Receiving objects: 100% (95022/95022), 21.69 MiB | 3.91 MiB/s, done.
+Resolving deltas: 100% (68944/68944), done.
+From https://github.com/Homebrew/brew
+ * [new branch]          master     -> origin/master
+ * [new tag]             0.1        -> 0.1
+ * [new tag]             0.2        -> 0.2
+ * [new tag]             0.3        -> 0.3
+ * [new tag]             0.4        -> 0.4
+ * [new tag]             0.5        -> 0.5
+ * [new tag]             0.6        -> 0.6
+ * [new tag]             0.7        -> 0.7
+ * [new tag]             0.7.1      -> 0.7.1
+ * [new tag]             0.8        -> 0.8
+ * [new tag]             0.8.1      -> 0.8.1
+ * [new tag]             0.9        -> 0.9
+ * [new tag]             0.9.1      -> 0.9.1
+ * [new tag]             0.9.2      -> 0.9.2
+ * [new tag]             0.9.3      -> 0.9.3
+ * [new tag]             0.9.4      -> 0.9.4
+ * [new tag]             0.9.5      -> 0.9.5
+ * [new tag]             0.9.8      -> 0.9.8
+ * [new tag]             0.9.9      -> 0.9.9
+ * [new tag]             1.0.0      -> 1.0.0
+ * [new tag]             1.0.1      -> 1.0.1
+ * [new tag]             1.0.2      -> 1.0.2
+ * [new tag]             1.0.3      -> 1.0.3
+ * [new tag]             1.0.4      -> 1.0.4
+ * [new tag]             1.0.5      -> 1.0.5
+ * [new tag]             1.0.6      -> 1.0.6
+ * [new tag]             1.0.7      -> 1.0.7
+ * [new tag]             1.0.8      -> 1.0.8
+ * [new tag]             1.0.9      -> 1.0.9
+ * [new tag]             1.1.0      -> 1.1.0
+ * [new tag]             1.1.1      -> 1.1.1
+ * [new tag]             1.1.10     -> 1.1.10
+ * [new tag]             1.1.11     -> 1.1.11
+ * [new tag]             1.1.12     -> 1.1.12
+ * [new tag]             1.1.13     -> 1.1.13
+ * [new tag]             1.1.2      -> 1.1.2
+ * [new tag]             1.1.3      -> 1.1.3
+ * [new tag]             1.1.4      -> 1.1.4
+ * [new tag]             1.1.5      -> 1.1.5
+ * [new tag]             1.1.6      -> 1.1.6
+ * [new tag]             1.1.7      -> 1.1.7
+ * [new tag]             1.1.8      -> 1.1.8
+ * [new tag]             1.1.9      -> 1.1.9
+ * [new tag]             1.2.0      -> 1.2.0
+ * [new tag]             1.2.1      -> 1.2.1
+ * [new tag]             1.2.2      -> 1.2.2
+ * [new tag]             1.2.3      -> 1.2.3
+ * [new tag]             1.2.4      -> 1.2.4
+ * [new tag]             1.2.5      -> 1.2.5
+ * [new tag]             1.2.6      -> 1.2.6
+ * [new tag]             1.3.0      -> 1.3.0
+ * [new tag]             1.3.1      -> 1.3.1
+ * [new tag]             1.3.2      -> 1.3.2
+ * [new tag]             1.3.3      -> 1.3.3
+ * [new tag]             1.3.4      -> 1.3.4
+ * [new tag]             1.3.5      -> 1.3.5
+ * [new tag]             1.3.6      -> 1.3.6
+ * [new tag]             1.3.7      -> 1.3.7
+ * [new tag]             1.3.8      -> 1.3.8
+HEAD is now at 1b2892262 Merge pull request #3505 from MikeMcQuaid/unify-proxy-docs
+==> Tapping homebrew/core
+Cloning into '/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core'...
+remote: Counting objects: 4647, done.
+remote: Compressing objects: 100% (4425/4425), done.
+remote: Total 4647 (delta 36), reused 326 (delta 10), pack-reused 0
+Receiving objects: 100% (4647/4647), 3.84 MiB | 2.79 MiB/s, done.
+Resolving deltas: 100% (36/36), done.
+Tapped 4420 formulae (4,695 files, 12.0MB)
+==> Cleaning up /Library/Caches/Homebrew...
+==> Migrating /Library/Caches/Homebrew to /Users/Andrew/Library/Caches/Homebrew.
+==> Deleting /Library/Caches/Homebrew...
+Already up-to-date.
+Error: Could not link:
+/usr/local/etc/bash_completion.d/brew
+
+Please delete these paths and run `brew update`.
+Error: Could not link:
+/usr/local/share/zsh/site-functions/_brew
+
+Please delete these paths and run `brew update`.
+Error: Could not link:
+/usr/local/share/man/man1/brew.1
+
+Please delete these paths and run `brew update`.
+Error: Could not link:
+/usr/local/share/doc/homebrew
+
+Please delete these paths and run `brew update`.
+==> Installation successful!
+
+==> Homebrew has enabled anonymous aggregate user behaviour analytics.
+Read the analytics documentation (and how to opt-out) here:
+  https://docs.brew.sh/Analytics.html
+
+==> Next steps:
+- Run `brew help` to get started
+- Further documentation: 
+    https://docs.brew.sh
+~$ open .bash_profile
+~$ ehco $PATH
+-bash: ehco: command not found
+~$ echo $PATH
+/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/Andrew/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin
+~$ brew help
+Example usage:
+  brew search [TEXT|/REGEX/]
+  brew (info|home|options) [FORMULA...]
+  brew install FORMULA...
+  brew update
+  brew upgrade [FORMULA...]
+  brew uninstall FORMULA...
+  brew list [FORMULA...]
+
+Troubleshooting:
+  brew config
+  brew doctor
+  brew install -vd FORMULA
+
+Developers:
+  brew create [URL [--no-fetch]]
+  brew edit [FORMULA...]
+  https://docs.brew.sh/Formula-Cookbook.html
+
+Further help:
+  man brew
+  brew help [COMMAND]
+  brew home
+~$ ls -a
+.			.continuum		.stack
+..			.coursier		.subversion
+.CFUserTextEncoding	.cups			.tooling
+.DS_Store		.ghc			.viminfo
+.GoPanda2		.gitconfig		.vscode
+.Rapp.history		.idea-build		Applications
+.Rhistory		.ivy2			Desktop
+.Trash			.local			Documents
+.android		.matlab			Downloads
+.astropy		.mplayer		IdeaProjects
+.bash_history		.node_repl_history	Library
+.bash_profile		.npm			Movies
+.bash_profile.pysave	.oracle_jre_usage	Music
+.bash_profile.save	.p2			Pictures
+.bash_sessions		.pylint.d		Public
+.bashrc			.rstudio-desktop	target
+.cache			.sbt
+.config			.scala_history
+~$ cd ..
+/Users$ cd ..
+/$ ls
+Applications			etc
+Library				home
+Network				installer.failurerequests
+System				net
+User Information		opt
+Users				private
+Volumes				sbin
+bin				tmp
+cores				usr
+dev				var
+/$ cd usr
+/usr$ ls
+bin		lib		local		share
+include		libexec		sbin		standalone
+/usr$ cd local
+/usr/local$[master] ls
+CODEOFCONDUCT.md	bin			remotedesktop
+Cellar			etc			sbin
+Frameworks		git			share
+Homebrew		include			texlive
+LICENSE.txt		lib			var
+Library			man
+README.md		opt
+/usr/local$[master] cd homebrew
+/usr/local/homebrew$[stable] ls
+CHANGELOG.md		Library			docs
+CODE_OF_CONDUCT.md	README.md		manpages
+CONTRIBUTING.md		bin
+LICENSE.txt		completions
+/usr/local/homebrew$[stable] cd
+~$ ls
+Applications	Downloads	Movies		Public
+Desktop		IdeaProjects	Music		target
+Documents	Library		Pictures
+~$ brew install mysql
+==> Installing dependencies for mysql: openssl
+==> Installing mysql dependency: openssl
+==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2m.high_sierra.
+######################################################################## 100.0%
+==> Pouring openssl-1.0.2m.high_sierra.bottle.tar.gz
+==> Caveats
+A CA file has been bootstrapped using certificates from the SystemRoots
+keychain. To add additional certificates (e.g. the certificates added in
+the System keychain), place .pem files in
+  /usr/local/etc/openssl/certs
+
+and run
+  /usr/local/opt/openssl/bin/c_rehash
+
+This formula is keg-only, which means it was not symlinked into /usr/local,
+because Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries.
+
+If you need to have this software first in your PATH run:
+  echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find this software you may need to set:
+    LDFLAGS:  -L/usr/local/opt/openssl/lib
+    CPPFLAGS: -I/usr/local/opt/openssl/include
+
+==> Summary
+🍺  /usr/local/Cellar/openssl/1.0.2m: 1,792 files, 12.3MB
+==> Installing mysql
+==> Downloading https://homebrew.bintray.com/bottles/mysql-5.7.20.high_sierra.bo
+######################################################################## 100.0%
+==> Pouring mysql-5.7.20.high_sierra.bottle.tar.gz
+==> /usr/local/Cellar/mysql/5.7.20/bin/mysqld --initialize-insecure --user=Andre
+==> Caveats
+We've installed your MySQL database without a root password. To secure it run:
+    mysql_secure_installation
+
+MySQL is configured to only allow connections from localhost by default
+
+To connect run:
+    mysql -uroot
+
+To have launchd start mysql now and restart at login:
+  brew services start mysql
+Or, if you don't want/need a background service you can just run:
+  mysql.server start
+==> Summary
+🍺  /usr/local/Cellar/mysql/5.7.20: 324 files, 233.7MB
+~$ brew services start mysql
+==> Tapping homebrew/services
+Cloning into '/usr/local/Homebrew/Library/Taps/homebrew/homebrew-services'...
+remote: Counting objects: 14, done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 14 (delta 0), reused 9 (delta 0), pack-reused 0
+Unpacking objects: 100% (14/14), done.
+Tapped 0 formulae (43 files, 55.7KB)
+==> Successfully started `mysql` (label: homebrew.mxcl.mysql)
+~$ mysqladmin -u root password "root"
+mysqladmin: [Warning] Using a password on the command line interface can be insecure.
+Warning: Since password will be sent to server in plain text, use ssl connection to ensure password safety.
+~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.20 Homebrew
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> ^DBye
+~$ 

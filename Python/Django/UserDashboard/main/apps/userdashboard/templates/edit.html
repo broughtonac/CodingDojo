@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit</title>
+</head>
+<body>
+    {% if editor == editee %}
+        <h1>edit profile</h1>
+    {% endif %}
+    {% if editor != editee %}
+        <h1>edit user {{ editee.id }}</h1>
+    {% endif %}
+    <fieldset>
+        <legend>edit information</legend>
+        <form action='/update_info/{{ editee.id }}' method='post'>
+            {% csrf_token %}
+            <p>first name: <input type='text' name='first_name' placeholder = {{ editee.first_name }}></p>
+            <p>last name: <input type='text' name='last_name' placeholder = {{ editee.last_name }}></p>
+            <p>email address: <input type='text' name='email' placeholder = {{ editee.email }}></p>
+            {% if editor == editee %}
+                <input type='hidden' name='user_level' value = {{ editor.is_admin }}>
+            {% endif %}
+            {% if editor != editee %}
+                <select name='user_level'>
+                    <option value='regular'>regular</option>
+                    <option value='admin'>admin</option>
+                </select>
+            {% endif %}
+            <p><input type='submit' value='update'></p>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>change password</legend>
+        <form action='/update_pw/{{ editee.id }}' method='post'>
+            {% csrf_token %}
+            <p>password: <input type='password' name='pw'></p>
+            <p>confirm password: <input type='password' name='pw_confirm'></p>
+            <p><input type='submit' value='change'></p>
+        </form>
+    </fieldset>
+    {% if editor == editee %}
+        <fieldset>
+            <legend>edit bio</legend>
+            <form action='/update_bio/{{ editee.id }}' method='post'>
+                {% csrf_token %}
+                <p><input type='text' name='bio'></p>
+                <p><input type='submit' name='save'></p>
+            </form>
+        </fieldset>
+    {% endif %}
+    <div>
+        {% if messages %}
+            <ul>
+            {% for m in messages %}
+                <li>{{ m }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

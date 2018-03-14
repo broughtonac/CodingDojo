@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="languagesreloaded"/>
+<aop-project name="portfolio"/>
+<aop-project name="admindashboard"/>
+<aop-project name="productsandcategories"/>
+<aop-project name="counter"/>
+<aop-project name="relationships"/>
+<aop-project name="loginandregistration"/>
+<aop-project name="ninjagold"/>
+<aop-project name="displaydate"/>
+<aop-project name="dojosandninjas"/>
+<aop-project name="employeesandmanagers"/>
+<aop-project name="lookify"/>
+<aop-project name="beltexam"/>
+<aop-project name="dojosurvey"/>
+<aop-project name="beltreviewer"/>
+<aop-project name="thecode"/>
+<aop-project name="dojooverflow"/>
+<aop-project name="grouplanguages"/>
+<aop-project name="hellohuman"/>
+<aop-project name="learningplatform"/>
+</aop-reference-model>

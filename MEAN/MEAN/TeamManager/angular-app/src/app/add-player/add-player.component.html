@@ -1,0 +1,23 @@
+<fieldset>
+  <legend>
+    <h1 style="display:inline-block" [routerLink]="['/players/list']">list</h1>
+    <h1 style="display:inline-block"> | </h1>
+    <h1 style="display:inline-block">add player</h1>
+  </legend>
+  <form (submit)="createPlayer()" method="post">
+    name: <input
+      type="text"
+      name="playerName"
+      required
+      minlength="2"
+      maxlength="255"
+      [(ngModel)]="player.name"
+      #playerName="ngModel"
+    ><br>
+    position (optional): <input type="text" name="player.position" [(ngModel)]="player.position"><br>
+    <div class="red" *ngIf="playerName.errors">
+      <p>name must be at least 2 characters</p>
+    </div>
+    <input *ngIf="!playerName.errors" type="submit" value="create">
+  </form>
+</fieldset>

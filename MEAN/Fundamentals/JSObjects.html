@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let students = [
+            {name: 'Remy', cohort: 'Jan'},
+            {name: 'Genevieve', cohort: 'March'},
+            {name: 'Chuck', cohort: 'Jan'},
+            {name: 'Osmund', cohort: 'June'},
+            {name: 'Nikki', cohort: 'June'},
+            {name: 'Boris', cohort: 'June'}
+        ];
+
+        for (let i = 0; i < students.length; i++) {
+            console.log("name: " + students[i].name + ", cohort: " + students[i].cohort)
+        }
+
+        console.log('\n\n')
+
+        let users = {
+            employees: [
+                {'first_name':  'Miguel', 'last_name' : 'Jones'},
+                {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+                {'first_name' : 'Nora', 'last_name' : 'Lu'},
+                {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+            ],
+            managers: [
+            {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+            {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+            ]
+        };
+
+        for (let user_type in users) {
+            console.log(user_type.toUpperCase())
+            for (let i = 0; i < users[user_type].length; i++) {
+                name_length = users[user_type][i].last_name.length + users[user_type][i].first_name.length
+                s = (i + 1 +  " - " + users[user_type][i].last_name + ", " + users[user_type][i].first_name + " - " + name_length)
+                console.log(s.toUpperCase())
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

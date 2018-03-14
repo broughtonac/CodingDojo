@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Contact Card</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            function attach_handler() { // callback function
+                $(".card").click(function() {
+                    if($(this).children(".toggleable").css("visibility") == "hidden") {
+                        $(this).children(".toggleable").css("visibility", "visible")
+                    }
+                    else {
+                        $(this).children(".toggleable").css("visibility", "hidden")
+                    }
+                })
+            }
+            $(document).ready(function() {
+                console.log("jquery ready")
+                attach_handler() // for cards that exist at time of page load
+                $("#card_form").submit(function() {
+                    var first= $("#first").val() // retrieves user keyboard input as a string
+                    var last= $("#last").val()
+                    var desc= $("#desc").val()
+                    $("#first").val("")
+                    $("#last").val("")
+                    $("#desc").val("")
+                    $("#rolodex").append( // ES6 syntax (backticks and dollar sign)
+                        `<div class="card">
+                            <h1>${first} ${last}</h1>
+                            <p>click for description</p>
+                            <h3 class="toggleable">${desc}</h3>
+                        </div>`
+                    )
+                    attach_handler() // for cards dynamically generated (via '$("#rolodex").append(...)') after page load
+                    return false; // prevents page reload
+                })
+                // $(document).on("click", ".card", function() { // alternate to using callbacks
+                //     $(this).children(".toggleable").toggle();
+                // })
+            })
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>create a card</legend>
+            <form id="card_form">
+                first name: <input type="text" name="first" placeholder="first name" id="first"><br>
+                last name: <input type="text" name="last" placeholder="last name" id="last"><br>
+                description: <br><textarea name="description" placeholder="description" id="desc"></textarea><br>
+                <input type="submit" value="add a card">
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>virtual rolodex</legend>
+            <div id="rolodex">
+                <div class="card">
+                    <h1>michael choi</h1>
+                    <p>click for description</p>
+                    <h3 class="toggleable">fearless leader</h3>
+                </div>
+                <div class="card">
+                    <h1>andrew broughton</h1>
+                    <p>click for description</p>
+                    <h3 class="toggleable">student</h3>
+                </div>
+            </div>
+        </fieldset>
+    </body>
+</html>

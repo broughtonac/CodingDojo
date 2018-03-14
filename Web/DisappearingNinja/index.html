@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Disappearing Ninja</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("img").click(function() {
+                    $(this).addClass("invisible")
+                })
+                $("button").click(function() {
+                    $("img").removeClass("invisible")
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <img src="ninja.png">
+            <img src="ninja.png">
+            <img src="ninja.png">
+            <img src="ninja.png">
+            <img src="ninja.png">
+            <img src="ninja.png">
+            <img src="ninja.png">
+            <img src="ninja.png">
+        </div>
+        <button class="click">Restore</button>
+    </body>
+</html>

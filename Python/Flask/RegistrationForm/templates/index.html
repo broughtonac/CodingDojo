@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>survey</title>
+    </head>
+    <body>
+        {% with msgs = get_flashed_messages() %}
+            {% if msgs %}
+                {% for m in msgs %}
+                    <p>{{m}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action='/process' method='post'>
+            email: <input type='text' name='email'><br><br>
+            first name: <input type='text' name='first'><br><br>
+            last name: <input type='text' name='last'><br><br>
+            pw: <input type='text' name='pw'><br><br>
+            confirm pw: <input type='text' name='confirm'><br><br>
+            <input type='submit' value='enter data'>
+        </form>
+    </body>
+</html>

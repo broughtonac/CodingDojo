@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;admindashboard&apos;&#x0A;- Original project: &apos;admindashboard&apos;&#x0A;- Original element: &apos;com.broughton.admindashboard.controllers.RouteController.java&apos;" description="Delete element" element1="/src\/main\/java&lt;com.broughton.admindashboard.controllers{RouteController.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1516841678111" subPackages="false" version="1.0"/>
+</session>

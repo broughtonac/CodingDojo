@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>register</title>
+    </head>
+    <body>
+        {% with msgs = get_flashed_messages() %}
+            {% if msgs %}
+                <p>{{ msgs[-1] }}</p>
+            {% endif %}
+        {% endwith %}
+        <form action='/process' method='post'>
+            email: <input type='text' name='email'><br>
+            <input type="submit" value="enter data">
+        </form>
+    </body>
+</html>

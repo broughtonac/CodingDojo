@@ -1,0 +1,13 @@
+<h1>ledger</h1>
+<table>
+  <tr>
+    <th>action</th>
+    <th>amount</th>
+    <th>value</th>
+  </tr>
+  <tr *ngFor="let t of transactions">
+    <td>{{ t.action }}</td>
+    <td>{{ t.amount }}</td>
+    <td>{{ t.value }}</td>
+  </tr>
+</table>

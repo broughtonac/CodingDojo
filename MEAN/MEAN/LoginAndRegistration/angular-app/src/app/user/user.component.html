@@ -1,0 +1,23 @@
+<fieldset>
+  <legend>login</legend>
+  <form (submit)="login()">
+    email: <input type="text" name="loggedInUser.email" [(ngModel)]="loggedInUser.email"><br>
+    password: <input type="password" name="loggedInUser.password" [(ngModel)]="loggedInUser.password"><br>
+    <input type="submit" value="login">
+  </form>
+  <li *ngIf="loggedInUser.errors">{{ loggedInUser.errors }}</li>
+</fieldset>
+<fieldset>
+  <legend>register</legend>
+  <form (submit)="register()">
+    {{ user | json }}<br>
+    first: <input type="text" name="user.first" [(ngModel)]="user.first"><br>
+    last: <input type="text" name="user.last" [(ngModel)]="user.last"><br>
+    email: <input type="text" name="user.email" [(ngModel)]="user.email"><br>
+    password: <input type="password" name="user.password" [(ngModel)]="user.password"><br>
+    <input type="submit" value="register">
+  </form>
+  <ul *ngIf="user.errors">
+    <li *ngFor="let e of user.errors">{{ e }}</li>
+  </ul>
+</fieldset>

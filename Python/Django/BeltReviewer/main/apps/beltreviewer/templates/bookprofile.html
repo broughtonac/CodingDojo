@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href='/logout'>log out</a> | <a href='/books'>home</a>
+    <h5>title: {{ title }}</h5>
+    <h5>author: {{author }}</h5>
+    <fieldset>
+        <legend>reviews</legend>
+        <ul>
+        {% for r in reviews %}
+            <li>
+                rating: {{ r.rating }}/5<br>
+                <a href='/users/{{ r.reviewer.id }}'>{{ r.reviewer.first_name }}</a> says: {{ r.content }}<br>
+                posted on: {{ r.created_at }}<br>
+                {% if r.reviewer.id == user.id %}
+                    <a href='/reviews/delete/{{ r.id }}/{{ bid }}'>delete</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>write a review</legend>
+        <form action='/reviews/bind/{{ bid }}' method='post'>
+            {% csrf_token %}
+            review: <input type='text' name='content'><br>
+            <select name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br>
+            <input type='submit' value='submit'>
+        </form>
+    </fieldset>
+</body>
+</html>

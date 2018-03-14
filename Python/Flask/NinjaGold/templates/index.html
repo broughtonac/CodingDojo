@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ninja gold</title>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="balance">
+                your gold: <span>{{session["gold"]}}</span>
+            </div>
+            <div class="place">
+                <h1>farm</h1>
+                <p>earns 10-20 gold</p>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="farm">
+                    <input type="submit" value="find gold">
+                </form>
+            </div>
+            <div class="place">
+                <h1>cave</h1>
+                <p>earns 5-10 gold</p>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="cave">
+                    <input type="submit" value="find gold">
+                </form>
+            </div>
+            <div class="place">
+                <h1>house</h1>
+                <p>earns 2-5 gold</p>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="house">
+                    <input type="submit" value="find gold">
+                </form>
+            </div>
+            <div class="place">
+                <h1>casino</h1>
+                <p>earns/loses 0-50 gold</p>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="casino">
+                    <input type="submit" value="find gold">
+                </form>
+            </div>
+            <div class="history">
+                {% for x in session["activity"] %}
+                    <p>{{x}}</p>
+                {% endfor %}
+            </div>
+            <form action="/reset" method="post">
+                <input type="submit" value="reset">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper {
+    width: 1000px;
+    margin: auto;
+}
+.place {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    border: 1px solid black;
+}
+.history {
+    overflow: scroll;    
+    height: 250px;
+}

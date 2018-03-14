@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.andrewbroughton.languagesreloaded.services.LanuageService.java&apos; to &apos;LanguageService.java&apos;&#x0A;- Original project: &apos;languagesreloaded&apos;&#x0A;- Original element: &apos;com.andrewbroughton.languagesreloaded.services.LanuageService.java&apos;&#x0A;- Renamed element: &apos;com.andrewbroughton.languagesreloaded.services.LanguageService.java&apos;" description="Rename compilation unit &apos;LanuageService.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java&lt;com.andrewbroughton.languagesreloaded.services{LanuageService.java" name="LanguageService.java" references="false" stamp="1516237570850" version="1.0"/>
+</session>

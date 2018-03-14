@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href='/logout'>log out</a> | <a href='/books/add'>review a book</a>
+    <h3>welcome {{ user.first_name }}</h3>
+    <fieldset>
+        <legend>recent reviews</legend>
+        <ul>
+        {% for r in reviews %}
+            <li>
+                title: <a href='/books/{{ r.book.id }}'>{{ r.book.title }}</a><br>
+                rating: {{ r.rating }}/5<br>
+                <a href='/users/{{ r.reviewer.id }}'>{{ r.reviewer.first_name }}</a> says: {{ r.content }}<br>
+                posted on: {{ r.created_at }}
+            </li>
+        {% endfor %}
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>other reviewed books</legend>
+        <ul>
+        {% for b in other_books %}
+            <li><a href='/books/{{ b.id }}'>{{ b.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </fieldset>
+</body>
+</html>

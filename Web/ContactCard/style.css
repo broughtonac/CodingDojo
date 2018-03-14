@@ -1,0 +1,11 @@
+.card {
+    outline: 1px solid blue;
+    height: 260px;
+    width: 360px;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+}
+.toggleable {
+    visibility: hidden;
+}

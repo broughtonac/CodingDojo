@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href='/quotes'>dashboard</a> | <a href='/logout'>log out</a>
+    <h1>posts by {{ user.alias }}</h1>
+    <h3>count: {{ count }}</h3>
+    <ul>
+        {% for p in posts %}
+            <li>
+                {{ p.author }}: "{{ p.content }}"
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

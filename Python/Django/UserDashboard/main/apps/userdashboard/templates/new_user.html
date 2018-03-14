@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+    <fieldset>
+        {% if request.path == '/users/new' %}
+            <legend>ADD NEW USER</legend>
+        {% endif %}
+        {% if request.path == '/register' %}
+            <legend>REGISTER</legend>
+        {% endif %}
+        <form action='/process_new_user' method='post'>
+            {% csrf_token %}
+            <p>first name: <input type='text' name='first_name'></p>
+            <p>last name: <input type='text' name='last_name'></p>
+            <p>email address: <input type='text' name='email'></p>
+            <p>password: <input type='password' name='pw'></p>
+            <p>confirm password: <input type='password' name='pw_confirm'></p>
+            {% if request.path == '/register' %}
+                <p><input type='submit' value='register'></p>
+                <input type='hidden' name='submission' value='register'>
+            {% endif %}
+            {% if request.path == '/users/new' %}
+                <p><input type='submit' value='create'></p>
+                <input type='hidden' name='submission' value='add'>
+            {% endif %}
+        </form>
+    </fieldset>
+    {% if request.path == '/register' %}
+        <a href='/login'>Already registered? Log in</a>
+    {% endif %}
+    <div>
+        {% if messages %}
+            <ul>
+            {% for m in messages %}
+                <li>{{ m }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

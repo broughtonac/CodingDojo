@@ -1,0 +1,21 @@
+<fieldset>
+  <legend>
+      <h1 style="display:inline-block">list</h1>
+      <h1 style="display:inline-block"> | </h1>
+      <h1 style="display:inline-block" [routerLink]="['/players/addplayer']">add player</h1>
+  </legend>
+  <table border="1">
+    <tr>
+      <th>name</th>
+      <th>position</th>
+      <th>actions</th>
+    </tr>
+    <tr *ngFor="let p of players">
+      <td>{{ p.name }}</td>
+      <td>{{ p.position }}</td>
+      <td>
+          <button (click)="deletePlayer(p._id)">delete</button>
+      </td>
+    </tr>
+  </table>
+</fieldset>

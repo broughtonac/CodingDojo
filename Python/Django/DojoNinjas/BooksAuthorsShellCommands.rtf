@@ -1,0 +1,178 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red242\green242\blue242;\red0\green0\blue0;\red0\green0\blue0;
+\red178\green178\blue178;\red46\green174\blue187;\red47\green180\blue29;}
+{\*\expandedcolortbl;;\csgray\c95825;\csgray\c0\c85000;\csgray\c0;
+\cssrgb\c75000\c75000\c75000;\cssrgb\c20198\c73241\c78251;\cssrgb\c20239\c73899\c14948;}
+\margl1440\margr1440\vieww15940\viewh16060\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \cb3 \CocoaLigature0 (venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py makemigrations books_authors\
+
+\f1\b \cf6 Migrations for 'books_authors':
+\f0\b0 \cf2 \
+  
+\f1\b \cf1 apps/books_authors/migrations/0001_initial.py
+\f0\b0 \cf2 :\
+    - Create model Author\
+    - Create model Book\
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py migrate\
+
+\f1\b \cf6 Operations to perform:
+\f0\b0 \cf2 \
+
+\f1\b \cf1   Apply all migrations: 
+\f0\b0 \cf2 admin, auth, books_authors, contenttypes, dojoninjas, sessions\
+
+\f1\b \cf6 Running migrations:
+\f0\b0 \cf2 \
+  Rendering model states...
+\f1\b \cf7  DONE
+\f0\b0 \cf2 \
+  Applying books_authors.0001_initial...
+\f1\b \cf7  OK
+\f0\b0 \cf2 \
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  ls\
+apps		db.sqlite3	main		manage.py\
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py shell\
+Python 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 12:01:12) \
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin\
+Type "help", "copyright", "credits" or "license" for more information.\
+(InteractiveConsole)\
+\
+>>> from apps.books_authors.models import *\
+\
+>>> Book.objects.create(name='C#')\
+<Book: Book object>\
+>>> Book.objects.create(name='Java')\
+<Book: Book object>\
+>>> Book.objects.create(name='Python')\
+<Book: Book object>\
+>>> Book.objects.create(name='PHP')\
+<Book: Book object>\
+>>> Book.objects.create(name='Ruby')\
+<Book: Book object>\
+>>> Author.objects.create(first_name='Mike')\
+<Author: Author object>\
+>>> Author.objects.create(first_name='Speros')\
+<Author: Author object>\
+>>> Author.objects.create(first_name='John')\
+<Author: Author object>\
+>>> Author.objects.create(first_name='Jadee')\
+<Author: Author object>\
+>>> Author.objects.create(first_name='Jay')\
+<Author: Author object>\
+>>> ^D\
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py makemigrations books_authors\
+You are trying to add a non-nullable field 'notes' to author without a default; we can't do that (the database needs something to populate existing rows).\
+Please select a fix:\
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)\
+ 2) Quit, and let me add a default in models.py\
+Select an option: 1\
+Please enter the default value now, as valid Python\
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now\
+Type 'exit' to exit this prompt\
+>>> ''\
+
+\f1\b \cf6 Migrations for 'books_authors':
+\f0\b0 \cf2 \
+  
+\f1\b \cf1 apps/books_authors/migrations/0002_author_notes.py
+\f0\b0 \cf2 :\
+    - Add field notes to author\
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py migrate\
+
+\f1\b \cf6 Operations to perform:
+\f0\b0 \cf2 \
+
+\f1\b \cf1   Apply all migrations: 
+\f0\b0 \cf2 admin, auth, books_authors, contenttypes, dojoninjas, sessions\
+
+\f1\b \cf6 Running migrations:
+\f0\b0 \cf2 \
+  Rendering model states...
+\f1\b \cf7  DONE
+\f0\b0 \cf2 \
+  Applying books_authors.0002_author_notes...
+\f1\b \cf7  OK
+\f0\b0 \cf2 \
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py shell\
+Python 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 12:01:12) \
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin\
+Type "help", "copyright", "credits" or "license" for more information.\
+(InteractiveConsole)\
+>>> from apps.books_authors.models import *\
+\
+>>> b = Book.objects.last()\
+>>> b.name = 'C#'\
+>>> b.save()\
+>>> Book.objects.last().name\
+u'C#'\
+\
+>>> a = Author.objects.last()\
+>>> a.first_name = 'Ketul'\
+>>> a.save()\
+>>> Author.objects.last().first_name\
+u'Ketul'\
+\
+>>> author1 = Author.objects.first()\
+>>> book1 = Book.objects.first()\
+>>> book1.authors.add(author1)\
+>>> book2 = Book.objects.get(id=2)\
+>>> book2.authors.add(author1)\
+\
+>>> Author.objects.first().books.all()\
+<QuerySet [<Book object: C# >, <Book object: Java >]>\
+>>> Book.objects.first().authors.all()\
+<QuerySet [<Author object: Mike   ]>\
+>>> Book.objects.get(id=2).authors.all()\
+<QuerySet [<Author object: Mike   ]>\
+\
+\
+>>> author2 = Author.objects.get(id=2)\
+>>> book1 = Book.objects.first()\
+>>> book1.authors.add(author2)\
+>>> book2 = Book.objects.get(id=2)\
+>>> book2.authors.add(author2)\
+>>> book3 = Book.objects.get(id=3)\
+>>> book3.authors.add(author2)\
+>>> Author.objects.get(id=2).books.all()\
+<QuerySet [<Book object: C# >, <Book object: Java >, <Book object: Python >]>\
+\
+>>> author3 = Author.objects.get(id=3)\
+>>> Book.objects.get(id=1).authors.add(author3)\
+>>> Book.objects.get(id=2).authors.add(author3)\
+>>> Book.objects.get(id=3).authors.add(author3)\
+>>> Book.objects.get(id=4).authors.add(author3)\
+>>> Author.objects.get(id=3).books.all()\
+<QuerySet [<Book object: C# >, <Book object: Java >, <Book object: Python >, <Book object: PHP >]>\
+\
+>>> for obj in Book.objects.all():\
+...     obj.authors.add(author4)\
+... \
+>>> Author.objects.get(id=4).books.all()\
+<QuerySet [<Book object: C# >, <Book object: Java >, <Book object: Python >, <Book object: PHP >, <Book object: C# >]>\
+\
+>>> book3 = Book.objects.get(id=3)\
+>>> book3\
+<Book object: Python >\
+>>> book3.authors.all()\
+<QuerySet [<Author object: Speros   , <Author object: John   , <Author object: Jadee   ]>\
+\
+>>> book3.authors.get(id=3).delete()\
+(5, \{u'books_authors.Author': 1, u'books_authors.Author_books': 4\})\
+>>> book3.authors.all()\
+<QuerySet [<Author object: Speros   , <Author object: Jadee   ]>\
+\
+>>> author5 = Author.objects.get(id=5)\
+>>> author5\
+<Author object: Ketul\
+>>> Book.objects.get(id=2).authors.add(author5)\
+>>> Book.objects.get(id=2).authors.all()\
+<QuerySet [<Author object: Mike   , <Author object: Speros   , <Author object: Jadee   , <Author object: Ketul   ]>\
+\
+>>> Author.objects.get(id=2).books.all()\
+<QuerySet [<Book object: C# >, <Book object: Java >, <Book object: Python >]>\
+\
+\
+}

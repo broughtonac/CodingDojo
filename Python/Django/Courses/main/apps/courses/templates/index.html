@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>courses list</title>
+</head>
+<body>
+    {% if messages %}
+        {% for m in messages %}
+            <li>{{ m }}</li>
+        {% endfor %}
+    {% endif %}
+    <h1>add a new course</h1>
+    <form action='/courses/add' method='post'>
+        {% csrf_token %}
+        <p>name: <input type='text' name='name'></p>
+        <p>description: <input type='text' name='desc'></p>
+        <p><input type='submit' value='add course'></p>
+    </form>
+    <h1>courses</h1>
+    {% for course in courses %}
+        <p>{{ course.name }} {{ course.desc }} {{ course.created_at }}</p>
+        <p><a href='/courses/delete/{{ course.id }}'>remove</a></p>
+    {% endfor %}
+</body>
+</html>

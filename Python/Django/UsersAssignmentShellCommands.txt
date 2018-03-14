@@ -1,0 +1,48 @@
+(venv2) ~/desktop/dojo/python/django/users/main$ python manage.py shell
+Python 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 12:01:12) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+
+>>> from apps.user_login.models import *
+
+>>> User.objects.create(first_name='Steve',last_name='Jobs',email_address='fake@fake.com',age=30)
+<User: User object>
+>>> User.objects.create(first_name='Isaac',last_name='Newton',email_address='fake1@fake1.com',age=35)
+<User: User object>
+>>> User.objects.create(first_name='Claude',last_name='Shannon',email_address='fake2@fake2.com',age=40)
+<User: User object>
+>>> User.objects.create(first_name='Leonard',last_name='Euler',email_address='fake3@fake3.com',age=45)
+<User: User object>
+
+>>> User.objects.all()
+<QuerySet [<User: User object>, <User: User object>, <User: User object>, <User: User object>]>
+
+>>> User.objects.first().first_name
+u'Steve'
+
+>>> User.objects.last().first_name
+u'Leonard'
+
+>>> [obj.first_name for obj in User.objects.all()]
+[u'Steve', u'Isaac', u'Claude', u'Leonard']
+>>> [(obj.first_name, obj.last_name) for obj in User.objects.all().order_by('first_name')]
+[(u'Claude', u'Shannon'), (u'Isaac', u'Newton'), (u'Leonard', u'Euler'), (u'Steve', u'Jobs')]
+
+>>> user3 = User.objects.get(id=3)
+>>> user3
+<User: User object>
+>>> user3.last_name
+u'Shannon'
+>>> user3.last_name = 'Lemieux'
+>>> user3.save()
+>>> user3.last_name
+'Lemieux'
+
+>>> User.objects.get(id=4).delete()
+(1, {u'user_login.User': 1})
+>>> User.objects.all()
+<QuerySet [<User: User object>, <User: User object>, <User: User object>]>
+
+>>> ^D
+(venv2) ~/desktop/dojo/python/django/users/main$ 

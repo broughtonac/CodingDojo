@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>info</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+            {% if not messages %}
+                name is {{name}}<br>
+                location is {{loc}}<br>
+                language is {{lang}}<br>
+                comment: {{msg}}
+            {% endif %}
+        {% endwith %}
+    </body>
+</html>

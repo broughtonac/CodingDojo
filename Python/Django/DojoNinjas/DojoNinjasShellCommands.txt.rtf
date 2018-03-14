@@ -1,0 +1,184 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red242\green242\blue242;\red0\green0\blue0;\red0\green0\blue0;
+\red178\green178\blue178;\red46\green174\blue187;\red47\green180\blue29;}
+{\*\expandedcolortbl;;\csgray\c95825;\csgray\c0\c85000;\csgray\c0;
+\cssrgb\c75000\c75000\c75000;\cssrgb\c20198\c73241\c78251;\cssrgb\c20239\c73899\c14948;}
+\margl1440\margr1440\vieww14160\viewh18000\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 d
+\f1\fs22 \cf2 \cb3 \CocoaLigature0 (venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py makemigrations\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\b \cf6 Migrations for 'dojoninjas':
+\f1\b0 \cf2 \
+  
+\f2\b \cf1 apps/dojoninjas/migrations/0001_initial.py
+\f1\b0 \cf2 :\
+    - Create model Dojo\
+    - Create model Ninja\
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py migrate\
+
+\f2\b \cf6 Operations to perform:
+\f1\b0 \cf2 \
+
+\f2\b \cf1   Apply all migrations: 
+\f1\b0 \cf2 admin, auth, contenttypes, dojoninjas, sessions\
+
+\f2\b \cf6 Running migrations:
+\f1\b0 \cf2 \
+  Rendering model states...
+\f2\b \cf7  DONE
+\f1\b0 \cf2 \
+  Applying contenttypes.0001_initial...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying auth.0001_initial...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying admin.0001_initial...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying admin.0002_logentry_remove_auto_add...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying contenttypes.0002_remove_content_type_name...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying auth.0002_alter_permission_name_max_length...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying auth.0003_alter_user_email_max_length...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying auth.0004_alter_user_username_opts...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying auth.0005_alter_user_last_login_null...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying auth.0006_require_contenttypes_0002...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying auth.0007_alter_validators_add_error_messages...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying auth.0008_alter_user_username_max_length...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying dojoninjas.0001_initial...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+  Applying sessions.0001_initial...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py shell\
+Python 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 12:01:12) \
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin\
+Type "help", "copyright", "credits" or "license" for more information.\
+(InteractiveConsole)\
+\
+>>> from apps.dojoninjas.models import *\
+>>> Dojo.objects.create(name='CodingDojo1',city='Mountain View',state='CA')\
+<Dojo: Dojo object>\
+>>> Dojo.objects.create(name='CodingDojo2',city='Seattle',state='WA')\
+<Dojo: Dojo object>\
+>>> Dojo.objects.create(name='CodingDojo3',city='New York City',state='NY')\
+<Dojo: Dojo object>\
+\
+>>> Dojo.objects.all()\
+<QuerySet [<Dojo: Dojo object>, <Dojo: Dojo object>, <Dojo: Dojo object>]>\
+>>> Dojo.objects.get(id=1).name\
+u'CodingDojo1'\
+\
+>>> Ninja.objects.create(dojo_id=1,first_name='Albert',last_name='Einstein')\
+<Ninja: Ninja object>\
+>>> Ninja.objects.create(dojo_id=1,first_name='Enrico',last_name='Fermi')\
+<Ninja: Ninja object>\
+>>> Ninja.objects.create(dojo_id=1,first_name='Wolfgang',last_name='Pauli')\
+\
+<Ninja: Ninja object>\
+>>> Ninja.objects.create(dojo_id=2,first_name='Vincent',last_name='Van Gogh')\
+<Ninja: Ninja object>\
+>>> Ninja.objects.create(dojo_id=2,first_name='M.C.',last_name='Escher')\
+<Ninja: Ninja object>\
+>>> Ninja.objects.create(dojo_id=2,first_name='Salvador',last_name='Dali')\
+\
+<Ninja: Ninja object>\
+>>> Ninja.objects.create(dojo_id=3,first_name='Alexander',last_name='The Great')\
+<Ninja: Ninja object>\
+>>> Ninja.objects.create(dojo_id=3,first_name='Genghis',last_name='Kahn')\
+<Ninja: Ninja object>\
+>>> Ninja.objects.create(dojo_id=3,first_name='Napoleon',last_name='Bonaparte')\
+<Ninja: Ninja object>\
+\
+>>> [(obj.first_name, obj.last_name) for obj in Dojo.objects.first().ninjas.all()]\
+[(u'Albert', u'Einstein'), (u'Enrico', u'Fermi'), (u'Wolfgang', u'Pauli')]\
+\
+>>> [(obj.first_name, obj.last_name) for obj in Dojo.objects.last().ninjas.all()]\
+[(u'Alexander', u'The Great'), (u'Genghis', u'Kahn'), (u'Napoleon', u'Bonaparte')]\
+>>> ^D\
+\
+\
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  ls\
+apps		db.sqlite3	main		manage.py\
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py makemigrationsNo changes detected\
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py migrate\
+\
+
+\f2\b \cf6 Operations to perform:
+\f1\b0 \cf2 \
+
+\f2\b \cf1   Apply all migrations: 
+\f1\b0 \cf2 admin, auth, contenttypes, dojoninjas, sessions\
+
+\f2\b \cf6 Running migrations:
+\f1\b0 \cf2 \
+  No migrations to apply.\
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py makemigrations\
+You are trying to add a non-nullable field 'desc' to dojo without a default; we can't do that (the database needs something to populate existing rows).\
+Please select a fix:\
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)\
+ 2) Quit, and let me add a default in models.py\
+Select an option: 1\
+Please enter the default value now, as valid Python\
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now\
+Type 'exit' to exit this prompt\
+>>> ''\
+\
+
+\f2\b \cf6 Migrations for 'dojoninjas':
+\f1\b0 \cf2 \
+  
+\f2\b \cf1 apps/dojoninjas/migrations/0002_dojo_desc.py
+\f1\b0 \cf2 :\
+    - Add field desc to dojo\
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py migrate\
+
+\f2\b \cf6 Operations to perform:
+\f1\b0 \cf2 \
+
+\f2\b \cf1   Apply all migrations: 
+\f1\b0 \cf2 admin, auth, contenttypes, dojoninjas, sessions\
+
+\f2\b \cf6 Running migrations:
+\f1\b0 \cf2 \
+  Rendering model states...
+\f2\b \cf7  DONE
+\f1\b0 \cf2 \
+  Applying dojoninjas.0002_dojo_desc...
+\f2\b \cf7  OK
+\f1\b0 \cf2 \
+(venv2) \cf4 \cb5 ~/desktop/dojo/python/django/dojoninjas/main$\cf2 \cb3  python manage.py shell\
+Python 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 12:01:12) \
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin\
+Type "help", "copyright", "credits" or "license" for more information.\
+(InteractiveConsole)\
+\
+>>> from apps.dojoninjas.models import *\
+>>> [obj.desc for obj in Dojo.objects.all()]\
+[u'', u'', u'']\
+>>> \
+}

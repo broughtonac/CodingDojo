@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>login</legend>
+        <form action="/login" method="post">
+            <p>email: <input type="text" name="email"></p>
+            <p>password: <input type="password" name="password"></p>
+            <p><input type="submit" value="login"></p>
+            <ul>
+            <% for (let i = 0; i < loginErrors.length; i++) { %>
+                <li><%= loginErrors[i] %></li>
+            <% } %>
+            </ul>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>register</legend>
+        <form action="/register" method="post">
+            <p>first name: <input type="text" name="firstName"></p>
+            <p>last name: <input type="text" name="lastName"></p>
+            <p>date of birth: <input type="date" name="dob"</p>
+            <p>email: <input type="text" name="email"></p>
+            <p>password: <input type="password" name="password"></p>
+            <p>confirm password: <input type="password" name="confirm"></p>
+            <p><input type="submit" value="register"></p>
+        </form>
+        <ul>
+        <% for (let i = 0; i < registrationErrors.length; i++) { %>
+            <li><%= registrationErrors[i] %></li>
+        <% } %>
+        </ul>
+    </fieldset>
+</body>
+</html>

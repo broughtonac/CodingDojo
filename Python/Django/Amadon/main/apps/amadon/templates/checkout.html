@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>checkout</title>
+    </head>
+    <body>
+        <div class='container'>
+            <h3>your credit card has been charged {{request.session.charge }}</h3>
+            <h5>you have ordered {{ request.session.num_orders }} items for a total of ${{ request.session.total }}</h5>
+            <form action='empty_cart' method='post'>
+                {% csrf_token %}
+                <input type='submit' value='empty cart'>
+            </form>
+            <a href='/'>go back</a>
+        </div>
+    </body>
+</html>

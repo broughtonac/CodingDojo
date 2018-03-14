@@ -1,0 +1,108 @@
+create project directory:
+	mkdir BicycleMarketplace
+	cd BicycleMarketplace
+
+create Express project:
+	npm init -y
+	npm install bcrypt body-parser express express-session mongoose --save
+	touch server.js
+	configure server.js:
+		let bcrypt = require("bcrypt")
+		let bodyParser = require("body-parser")
+		let express = require("express")
+		let session = require("express-session")
+		let mongoose = require("mongoose")
+		let path = require("path")
+		let app = express()
+		app.use(bodyParser.json())
+		app.use(express.json())
+		app.use(express.static( __dirname + '/angular-app/dist'))
+		app.use(session({secret: "secret"}))
+		app.listen(8000)
+		// link modularized directories
+		require("./server/config/mongoose.js")
+		require("./server/config/routes.js")(app)
+		// database setup
+		mongoose.connect("mongodb://localhost/bicycle_marketplace")
+	mkdir server
+	cd server
+	mkdir config
+	cd config
+	touch mongoose.js
+	configure mongoose.js:
+		let mongoose = require("mongoose")
+		let path = require("path")
+		let models = path.join(__dirname, "../models")
+
+		mongoose.connect("mongodb://localhost/bicycle_marketplace")
+		mongoose.Promise = global.Promise
+
+		require("../models/User.js")
+		require("../models/Bicycle.js")
+	touch routes.js
+	configure routes.js:
+		let UserController = require("../controllers/UserController.js")
+		let BicycleController = require("../controllers/BicycleController.js")
+		let path = require("path")
+
+		module.exports = (app) => {
+		...
+		    app.all("*", (request, result, next) => {
+		        result.sendFile(path.resolve("./angular-app/dist/index.html"))
+		    })
+		}
+	cd ..
+	mkdir controllers
+	cd controllers
+	touch UserController.js
+	touch BicycleController.js
+	configure UserController.js:
+		let User = require("mongoose").model("User")
+		class UserController {...}
+		module.exports = new UserController()
+	cd ..
+	mkdir models
+	cd models
+	touch User.js
+	touch Bicycle.js
+	configure User.js:
+		let mongoose = require("mongoose")
+		mongoose.model("User", new mongoose.Schema({...}))
+
+create Angular app within the Express project:
+	ng new angular-app --routing
+	cd angular-app
+	ng g s user // create UserService
+	ng g s bicycle // create BicycleService
+	ng g c entry // create EntryComponent (login and registration)
+	ng g c dashboard // create DashboardComponent
+	register service and inject dependencies:
+		app.module.ts:
+			import {HttpClient, HttpClientModule} from "@angular/common/http"
+			import {FormsModule} from "@angular/forms"
+			imports: [
+			    BrowserModule,
+			    AppRoutingModule,
+			    HttpClientModule,
+			    FormsModule
+			]
+			providers: [
+				UserService,
+				BicycleService
+			]
+		user.service.ts:
+			export class UserService {
+			  constructor(private _http: HttpClient) { }
+			}
+		app.component.ts:
+			export class AppComponent {
+			  constructor(private _userService: UserService) {}
+			}
+	configure entry.component.ts:
+		export class EntryComponent implements OnInit {
+		  constructor(private _userService: UserService, private _router: Router) {}
+		  ngOnInit() {}
+		}
+
+spin servers:
+	//...

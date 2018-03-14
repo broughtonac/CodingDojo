@@ -1,0 +1,22 @@
+<h1>bicycle marketplace</h1>
+<h3 style="display:inline-block">browse</h3>
+<h3 style="display:inline-block">|</h3>
+<h3 style="display:inline-block" [routerLink]="['/listings']">my listings</h3>
+<h3 style="display:inline-block">|</h3>
+<h3 style="display:inline-block" [routerLink]="['']">log off</h3>
+
+<fieldset>
+  <legend>search</legend>
+  <input #box (keyup)="search(box.value)">
+</fieldset>
+
+<ng-container *ngFor="let bicycle of bicycles">
+  <fieldset>
+    <p>title: {{bicycle.title}}</p>
+    <p>description: {{bicycle.description}}</p>
+    <p>price: {{bicycle.price}}</p>
+    <p>location: {{bicycle.location}}</p>
+    <button *ngIf="user._id == bicycle._user" (click)="destroy(bicycle._id)">delete</button>
+    <button *ngIf="user._id != bicycle._user" (click)="viewContact(bicycle._user)">contact</button>
+  </fieldset>
+</ng-container>

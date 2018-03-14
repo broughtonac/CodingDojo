@@ -1,0 +1,7 @@
+<h1>display form for editing a mongoose</h1>
+<form action=<%= "/mongooses/" + mongoose.id %> method="post">
+    <p>name: <input type="text" name="name" placeholder=<%= mongoose.name %>></p>
+    <p>age: <input type="text" name="age" placeholder=<%= mongoose.age %>></p>
+    <p>weight: <input type="text" name="weight" placeholder=<%= mongoose.weight %>></p>
+    <input type="submit" value="submit">
+</form>

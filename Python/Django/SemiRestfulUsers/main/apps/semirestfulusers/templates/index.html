@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>users index</title>
+</head>
+<body>
+    <h1>current users</h1>
+    {% for user in users %}
+        <p>{{ user.id }} {{ user.first_name }} {{ user.last_name }} {{ user.email }} {{ user.created_at }}</p>
+       <h3>actions</h3>
+        <p>
+            <a href='/users/{{ user.id }}'>show</a>
+            <a href='/users/{{ user.id }}/edit'>edit</a>
+            <a href='/users/{{ user.id }}/destroy'>delete</a>
+        </p>
+    {% endfor %}
+    <p><a href='/users/new'>add new user</a></p>
+</body>
+</html>

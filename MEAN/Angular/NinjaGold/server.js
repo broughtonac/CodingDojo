@@ -1,0 +1,7 @@
+let bodyParser = require("body-parser")
+let express = require("express")
+let mongoose = require("mongoose")
+let app = express()
+app.use(bodyParser.json())
+app.use(express.static( __dirname + '/AngularApp/dist'))
+app.listen(8000)
